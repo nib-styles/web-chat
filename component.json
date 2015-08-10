@@ -1,0 +1,10 @@
+{
+  "name": "web-chat",
+  "version": "0.0.1",
+  "styles": [
+    "index.css",
+  ],
+  "dependencies": {
+    "nib-styles/control": "^1.2.1"
+  }
+}
