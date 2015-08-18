@@ -1,8 +1,8 @@
 {
   "name": "web-chat",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "styles": [
-    "index.css",
+    "index.css"
   ],
   "dependencies": {
     "nib-styles/control": "^1.2.1"
