@@ -32,6 +32,7 @@
 .web-chat__close {
   top: 6px;
   position: relative;
+  cursor: pointer;
 }
 
 /* END: Web chat styles */
