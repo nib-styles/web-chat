@@ -29,6 +29,11 @@
   font-size: 16px;
 }
 
+.web-chat__close {
+  top: 6px;
+  position: relative;
+}
+
 /* END: Web chat styles */
 
 /* START: nib-styles/control overrides */
