@@ -354,3 +354,16 @@
     bottom: 88px;
   }
 }
+
+.web-chat__menu--chat {
+  color: #FFFFFF;
+  background: #009623;
+  padding: 10px 20px;
+}
+.web-chat__close--chat {
+  color: #FFFFFF;
+}
+.web-chat__close--chat:hover {
+  color: #DDDDDD;
+  margin-top: 7px;
+}
