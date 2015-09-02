@@ -362,8 +362,8 @@
 }
 .web-chat__close--chat {
   color: #FFFFFF;
+  margin-top: 7px;
 }
 .web-chat__close--chat:hover {
   color: #DDDDDD;
-  margin-top: 7px;
 }
