@@ -1,5 +1,151 @@
-/* START: Web chat styles */
+.hidden {
+  display: none!important;
+  visibility: hidden!important;
+}
 
+.wc-calendar {
+  background: #fff;
+  background: linear-gradient(top,#fff,#eee);
+  transition-duration: .3s;
+  transition-timing-function: cubic-bezier(0,0,.58,1);
+  transition-property: opacity, margin;
+  overflow: hidden;
+  width: 225px;
+  line-height: 32px;
+  text-align: center;
+  box-shadow: 0 0 3px 1px rgba(0,0,0,.3);
+  z-index: 1000;
+  opacity: 0;
+  margin-left: 25px;
+}
+
+.wc-calendar.is-visible {
+  margin: 0 auto;
+  opacity: 1;
+}
+
+.wc-calendar__month {
+  user-select: none;
+  cursor: default;
+  background: #009623;
+  position: relative;
+  font-weight: 400;
+  color: #fff;
+  line-height: 33px;
+}
+
+.wc-calendar__back,
+.wc-calendar__forward,
+.wc-calendar__today {
+  position: absolute;
+  top: 9px;
+  cursor: pointer;
+}
+
+.wc-calendar__back.is-disabled,
+.wc-calendar__forward.is-disabled {
+  display: none;
+}
+
+.wc-calendar__back {
+  left: 10px;
+}
+
+.wc-calendar__forward {
+  right: 10px;
+}
+
+.wc-calendar__today {
+  left: 30px;
+  top: 5px;
+}
+
+.wc-calendar__week {
+  user-select: none;
+  cursor: default;
+  box-shadow: 0 2px 3px rgba(0,0,0,.2) inset;
+  background: #444;
+  color: #999;
+  font-weight: 400;
+  font-size: 12px;
+  overflow: hidden;
+  border-left: 1px solid #444;
+  border-right: 1px solid #444;
+  position: relative;
+  z-index: 2;
+  margin-bottom: -1px;
+  text-shadow: 0 -1px 1px rgba(0,0,0,.3);
+}
+
+.wc-calendar__days {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  clear: both;
+  border-top: 1px solid #b9b9b9;
+  border-left: 1px solid #b9b9b9;
+}
+
+.wc-calendar__days span {
+  cursor: pointer;
+  float: left;
+  width: 31px;
+  height: 31px;
+  display: block;
+  border-right: 1px solid #b9b9b9;
+  border-bottom: 1px solid #b9b9b9;
+  background: #fff;
+  color: #737373;
+}
+
+.wc-calendar__days span:hover {
+  background: #eee;
+}
+
+.wc-calendar__days span.is-prev-month,
+.wc-calendar__days span.is-next-month {
+  background: #e9e9e9;
+  color: #bfbfbf;
+}
+
+.wc-calendar__days span.is-selected {
+  background: #009623;
+  color: #fff;
+  border: 1px solid #009623;
+  margin-left: -1px;
+  margin-top: -1px;
+}
+
+.wc-calendar__days span.is-today {
+  position: relative;
+}
+
+.wc-calendar__days span.is-today:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 10px 10px 0 0;
+  border-top-color: #009623;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.wc-calendar__week span {
+  display: block;
+  width: 31px;
+  float: left;
+}
+.wc-calendar__day.is-disabled {
+  background: #e9e9e9;
+  color: #bfbfbf;
+  cursor: default;
+}
+
+  /* make changes to nib-styles/web-chat */
 .web-chat {
   position: fixed;
   bottom: 0;
@@ -9,15 +155,20 @@
 }
 
 .web-chat__content {
-  background-color: #009623;
+  background-color: #26B11B;
   color: #FFF;
   padding: 30px;
 }
 
 .web-chat__menu {
-  padding: 10px 30px;
-  background-color: #26B11B;
-  color: #0A6D12;
+  padding: 10px;
+  background-color: #26b11b;
+  color: #009623;
+  min-height: 30px;
+}
+
+.web-chat__mb {
+  margin-bottom: 10px;
 }
 
 .web-chat__chat-now {
@@ -28,16 +179,6 @@
   margin-bottom: 20px;
   font-size: 16px;
 }
-
-.web-chat__close {
-  top: 6px;
-  position: relative;
-  cursor: pointer;
-}
-
-/* END: Web chat styles */
-
-/* START: nib-styles/control overrides */
 
 .web-chat .control-feedback-pointer {
   position: absolute;
@@ -58,6 +199,158 @@
 .web-chat .control-input-text {
   color: #000000;
 }
+.web-chat {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 2000;
+  box-shadow: rgba(0, 0, 0, 0.0980392) 0 0 3px 2px;
+  margin: 0 10px;
+  max-width: 330px;
+}
+.web-chat__close {
+  position: relative;
+  color: #009623;
+  cursor: pointer;
+  transition: color 200ms;
+}
+.web-chat__close:hover {
+  color: #007A1D;
+}
+.web-chat__close:active {
+  color: #006117;
+}
+.web-chat_icon {
+  margin-right: 10px;
+}
+.web-chat__modal {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+  background: #ededed;
+  opacity: 1;
+  transition: opacity 500ms;
+  overflow-y: scroll;
+}
+.web-chat__modal--disabled {
+  z-index: -1000;
+  opacity: 0;
+}
+.web-chat__modal--transitioning {
+  z-index: 2000;
+}
+.web-chat__modal-container {
+  top: 100px;
+  position: relative;
+  transition: max-width 300ms;
+  margin: 0 auto 100px;
+}
+.web-chat__current-date{
+  margin-bottom: 20px;
+}
+.web-chat__current-date,
+.web-chat__current-time {
+  cursor: pointer;
+}
+.web-chat__modal .calendar {
+  margin: 0 auto;
+  position: inherit;
+}
+.web-chat__modal .calendar__back.is-disabled {
+  display: none;
+}
+.web-chat__modal .v2-icon--chevron-circle-inverse {
+  padding-left: 10px;
+  top: 1px;
+  position: relative;
+}
+.web-chat__modal .control__input {
+  color: #000000;
+}
+.web-chat__navigation {
+  padding: 0 30px 30px 30px;
+  background: #26b11b;
+}
+.web-chat__modal .timepicker__clockback {
+  margin: 0 auto;
+}
 
-/* END: nib-styles/control overrides */
+.mini-time-picker {
+  height: 0;
+}
+.mini-time-picker__clockface {
+  background: #0a6d12;
+  height: 70px;
+  width: 70px;
+  border-radius: 35px;
+  position: relative;
+  right: 75%;
+  bottom: 70px;
+  margin: 0 0 0 auto;
+  cursor: pointer;
+}
+.mini-time-picker__current {
+  text-align: center;
+  margin-top: 24px;
+}
+.mini-time-picker__ampm {
+  color: #FFFFFF;
+  width: 35px;
+  height: 70px;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+}
+.mini-time-picker__ampm--am {
+  background: #009623;
+  border-top-left-radius: 35px;
+  border-bottom-left-radius: 35px;
+}
+.mini-time-picker__ampm > div {
+  margin-top: 23px;
+  text-align: center;
+}
 
+@media(min-width: 40em){
+  .wc-calendar.is-visible {
+    margin: 0 0 0 auto;
+  }
+  .web-chat__navigation {
+    background: #ededed;
+    padding: 20px;
+    text-align: right;
+  }
+  .web-chat__our-hours {
+    position: relative;
+    height: 0;
+  }
+  .web-chat__our-hours--date,
+  .web-chat__our-hours--time {
+    bottom: 134px;
+  }
+  .web-chat__name-control {
+    max-width: 280px;
+  }
+  .web-chat__menu {
+    background-color: #ededed;
+    color: #009623;
+  }
+  .web-chat__close {
+    color: #AAAAAA;
+  }
+  .web-chat__close:hover {
+    color: #777777;
+  }
+  .web-chat__close:active {
+    color: #444444;
+  }
+  .web-chat__modal .timepicker__clockback {
+    margin: 0 0 0 auto;
+  }
+  .mini-time-picker__clockface {
+    right: 37%;
+    bottom: 88px;
+  }
+}
