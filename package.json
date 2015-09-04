@@ -7,6 +7,7 @@
     "url": "git@github.com:nib-styles/web-chat.git"
   },
   "dependencies": {
-    "@nib-styles/control": "^1.2.1"
+    "@nib-styles/control": "^1.2.1",
+    "@nib-styles/v2-alerts": "^1.0.0"
   }
 }
