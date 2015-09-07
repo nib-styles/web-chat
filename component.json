@@ -1,11 +1,12 @@
 {
   "name": "web-chat",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "styles": [
     "index.css"
   ],
   "dependencies": {
     "nib-styles/control": "^1.2.1",
+    "nib-styles/time-picker": "^0.0.6",
     "nib-styles/v2-alerts": "^1.0.0"
   }
 }
