@@ -246,6 +246,7 @@
   position: relative;
   transition: max-width 300ms;
   margin: 0 auto 100px;
+  padding-bottom: 100px;
 }
 .web-chat__current-date{
   margin-bottom: 20px;
@@ -290,6 +291,10 @@
   bottom: 70px;
   margin: 0 0 0 auto;
   cursor: pointer;
+}
+.mini-time-picker__current {
+  text-align: center;
+  margin-top: 24px;
 }
 .mini-time-picker__current {
   text-align: center;
