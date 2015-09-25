@@ -365,13 +365,10 @@
   background: #009623;
   padding: 10px 20px;
 }
-.web-chat__menu-title {
-  color: #FFFFFF;
-  background: #009623;
-  padding: 10px 20px;
+span.web-chat__menu-title {
   font-size: 24px;
 }
-.web-chat__close--chat {
+span.web-chat__close--chat {
   color: #FFFFFF;
   margin-top: 6px;
   font-size: 16px;
