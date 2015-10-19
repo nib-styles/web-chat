@@ -1,3 +1,8 @@
+@import '@nib-styles/time-picker';
+
+@import '@nib-styles/control';
+@import '@nib-styles/control/src/control-input-text'; //this component needs updating for sass-composer
+
 .hidden {
   display: none!important;
   visibility: hidden!important;
@@ -145,7 +150,7 @@
   cursor: default;
 }
 
-  /* make changes to nib-styles/web-chat */
+/* make changes to nib-styles/web-chat */
 .web-chat {
   position: fixed;
   bottom: 0;

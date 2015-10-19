@@ -9,5 +9,11 @@
   "dependencies": {
     "@nib-styles/control": "^1.2.1",
     "@nib-styles/time-picker": "^0.0.7"
+  },
+  "devDependencies": {
+    "sass-composer": "^2.0.0-beta7"
+  },
+  "scripts": {
+    "build": "sass-composer index.scss -o dist/compiled.css"
   }
 }
