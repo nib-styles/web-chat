@@ -1,13 +1,14 @@
 {
   "name": "@nib-styles/web-chat",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "repository": {
     "type": "git",
     "url": "git@github.com:nib-styles/web-chat.git"
   },
   "dependencies": {
     "@nib-styles/control": "^1.2.1",
-    "@nib-styles/time-picker": "^0.0.7"
+    "@nib-styles/time-picker": "^0.0.7",
+    "@nib-styles/v2-icons": "^2.4.2"
   },
   "devDependencies": {
     "sass-composer": "^2.0.0-beta7"
